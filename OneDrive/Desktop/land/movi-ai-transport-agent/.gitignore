@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+*.pyc
+node_modules/
+dist/
+db/movi.db
+.DS_Store
+*.log
+

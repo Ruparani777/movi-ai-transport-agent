@@ -95,7 +95,7 @@ cd frontend
 npm run dev
 
 ``````
-
+``````
 **ARCHITECTURE**/
 [React Admin Console]  <--REST-->  [FastAPI Backend]  <--SQLModel-->  [SQLite Dummy DB]
        |                                   |
@@ -105,6 +105,7 @@ npm run dev
                                       | 10+ DB tools (CRUD + query)
                                       | Consequence checks
                                       | Confirmation loop for risky ops
+``````
 ``````
 
 **User Input**

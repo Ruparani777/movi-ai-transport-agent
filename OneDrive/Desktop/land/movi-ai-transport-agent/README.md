@@ -1,4 +1,4 @@
-# 🚌 Movi — Multimodal Transport Management Agent# 
+# 🚌 Movi — Multimodal Transport Management Agent #
 
 
 **Movi** is an AI-powered assistant integrated into the **MoveInSync Shuttle** admin console. It helps transport managers manage operations through voice, text, and image inputs using a stateful agent pipeline.Movi is a multimodal, knowledge-aware agent that helps MoveInSync transport managers orchestrate both static (Stops, Paths, Routes) and dynamic (Trips, Deployments, Vehicles) operations. The solution bundles a LangGraph-powered backend, a modern admin console, and a seeded dummy database ready for demos or extension.

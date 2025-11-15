@@ -110,9 +110,9 @@ npm run dev
 ``````
 
 
-**User Input**
+**WORKFLOW**
 ``````
-
+User Input
     ↓The Vite dev server proxies all `/api` requests to `http://localhost:8000`, so both apps should run concurrently.
 
 [1] Parse Intent
@@ -139,17 +139,17 @@ Agent Response
 
 ``` 2. Manage Route (`/manageRoute`)
 
-``````
 
 ---- Form-driven creation of new stops (delegates to Movi agent for execution)
 
 - Snapshot views of all paths and their ordered stops
-
+``````
 ## 📊 Database Schema- Route table with status pills and shift details
 
 
 
-### Static Assets### 3. Movi Assistant Panel
+### Static Assets
+## Movi Assistant Panel
 
 - **Stops**: stop_id, name, latitude, longitude
 
@@ -169,7 +169,7 @@ Agent Response
 
 - **Deployments**: deployment_id, trip_id, vehicle_id, driver_id
 
-## Demo Script (2–5 minutes)
+## Demo
 
 ### Seeded Data
 

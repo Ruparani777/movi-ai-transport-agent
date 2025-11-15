@@ -2,7 +2,6 @@
 
 **Date**: November 14, 2025  
 **Status**: ~100% Complete 
-**Owner**: MoveInSync Shuttle
 
 ---
 

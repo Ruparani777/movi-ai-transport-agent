@@ -100,40 +100,30 @@ pip install -r backend/requirements.txt -r backend/requirements.langgraph.txt
 2. Start the backend and call the `/agent/action` endpoint. The backend will use the langgraph adapter when available.
 
 
-## Repository Layout
+---
 
-```
-/backend           # FastAPI service and LangGraph integration
-  /app
-    main.py        # FastAPI entrypoint & REST endpoints
-    database.py    # SQLModel engine configuration
-    models.py      # ORM models for stops, paths, routes, etc.
-    crud.py        # Database helpers used by both API and agent
-    seed_data.py   # Dummy data seeded on startup
-/frontend          # Vite + React + Tailwind admin console
-  /src/pages       # busDashboard & manageRoute clones
-  /src/components  # Layout shell and Movi assistant widget
-  /src/hooks       # Web Speech API utilities
-/langgraph_agent   # LangGraph state machine and tools
-/db                # SQLite file generated on first run
+## Quick Highlights
 
+- Multimodal UI: text, voice (Web Speech API), and image upload stubs for vision matching  
+- Consequence-aware agent: parse → context → consequences → confirm → execute → respond  
+- Full CRUD-backed domain: Stops, Paths, Routes, Vehicles, Drivers, DailyTrips, Deployments (SQLite seed included)  
+- Demo-first: demo scripts and output capture utilities write timestamped run summaries to `outputs/`  
 
+---
 
-- Multimodal UI: text, voice (Web Speech API), and image upload stubs for vision matching.
-- Consequence-aware agent: parse → context → consequences → confirm → execute → respond.
-- Full CRUD-backed domain: Stops, Paths, Routes, Vehicles, Drivers, DailyTrips, Deployments (SQLite seed included).
-- Demo-first: demo scripts and output capture utilities that write timestamped run summaries to `outputs/`.
+## Backend Setup (WSL / Linux / Docker recommended)
 
-
-Notes: Windows PowerShell has shown uvicorn shutdown issues in some environments. For a reliable demo, use WSL2 or Docker (instructions below).
-
-1) Backend (WSL / Linux / Docker recommended)
+> **Note:** Windows PowerShell has known uvicorn shutdown issues. For a reliable demo, use WSL2 or Docker.
 
 ```bash
 cd backend
 python -m venv .venv
 source .venv/bin/activate   # WSL / macOS / Linux
 pip install -r requirements.txt
+# Optional: LangGraph features
+pip install -r requirements.langgraph.txt
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+
 # (Optional) If you want LangGraph features, install extras in WSL/Docker:
 pip install -r requirements.langgraph.txt
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload

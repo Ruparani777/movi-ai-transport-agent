@@ -181,7 +181,7 @@ After running, look in `outputs/` for `YYYYMMDDTHHMMSSZ_{runid}.json` and `.md` 
 
 ## Contact & credits
 
-- Project: Movi — MoviAgent demo for MoveInSync-style transport management
+- Project: Movi — Movi-ai-transport-agent
 - Author:Ruparani Thupakula
 - Date: November 2025
 

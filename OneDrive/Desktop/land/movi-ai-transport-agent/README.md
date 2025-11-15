@@ -27,77 +27,26 @@
 
 - ✅ **Seeded SQLite database**: 5 stops, 2 paths, 2 routes, 3 vehicles, 3 drivers, 2 trips
 
-```
+backend/
+  main.py         # FastAPI entrypoint & REST endpoints
+  database.py     # SQLModel engine configuration
+  models.py       # ORM models (stops, paths, routes, etc.)
+  crud.py         # Shared database helper functions
+  seed_data.py    # Dummy dataset seeded on startup
+  db/             # SQLite file auto‐generated on first run
 
----/backend           # FastAPI service and LangGraph integration
+frontend/
+  /src/pages      # busDashboard & manageRoute views
+  /src/components # Layout shell + Movi assistant widget
+  /src/hooks      # Web Speech API utilities
+  assets/         # Logos / demo captures
 
-  /app
-
-## 🚀 Quick Start    main.py        # FastAPI entrypoint & REST endpoints
-
-    database.py    # SQLModel engine configuration
-
-### Prerequisites    models.py      # ORM models for stops, paths, routes, etc.
-
-- Python 3.9+ (with venv)    crud.py        # Database helpers used by both API and agent
-
-- Node.js 16+ (with npm)    seed_data.py   # Dummy data seeded on startup
-
-- Windows PowerShell/frontend          # Vite + React + Tailwind admin console
-
-  /src/pages       # busDashboard & manageRoute clones
-
-### 1. Backend Setup  /src/components  # Layout shell and Movi assistant widget
-
-  /src/hooks       # Web Speech API utilities
-
-```powershell/langgraph_agent   # LangGraph state machine and tools
-
-cd backend/db                # SQLite file generated on first run
-
-python -m venv .venv/assets            # Placeholder for logos / demo captures
-
-.\.venv\Scripts\Activate.ps1README.md
-
-pip install -r requirements.txt```
+langgraph_agent/
+  agent.py / tools / state_graph.py  # LangGraph state machine
 
 ```
 
----
 
-### 2. Frontend Setup
-
-## Architecture Overview
-
-```powershell
-
-cd ..\frontend```text
-
-npm install[React Admin Console]  <--REST-->  [FastAPI Backend]  <--SQLModel-->  [SQLite Dummy DB]
-
-npm audit fix  # Optional: update security fixes       |                                   |
-
-```       | Web Speech API / upload           | LangGraph StateGraph
-
-       v                                   v
-
-### 3. Start the App  Movi Assistant Panel --------->  MoviAgent.handle_action()
-
-                                      | 10+ DB tools (CRUD + query)
-
-**Terminal 1 — Backend:**                                      | Consequence checks (tribal knowledge)
-
-```powershell                                      | Confirmation loop before execution
-
-cd backend```
-
-.\.venv\Scripts\Activate.ps1
-
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000- **Frontend (Vite + React + Tailwind)**: Two primary views (`/busDashboard`, `/manageRoute`) replicate the admin console experience, while the Movi side panel offers chat, voice (STT/TTS via Web Speech API), and image uploads (vision stub).
-
-```- **Backend (FastAPI + SQLModel)**: Exposes REST endpoints for CRUD tables and surfaces the LangGraph agent via `/agent/action`. On startup it provisions `db/movi.db` with seeded data that mimics day-to-day operations.
-
-- **LangGraph Agent**: A compiled `StateGraph` with explicit nodes for intent parsing, context scoping, consequence evaluation, and execution. Consequence-sensitive actions (e.g., removing a vehicle from a trip with bookings) route through confirmation before completion.
 
 **Terminal 2 — Frontend:**
 
@@ -168,8 +117,20 @@ cd frontend
 npm run dev
 
 ``````
+``````
 
-User Input
+**ARCHITECTURE**/
+[React Admin Console]  <--REST-->  [FastAPI Backend]  <--SQLModel-->  [SQLite Dummy DB]
+       |                                   |
+       | Web Speech API / uploads          | LangGraph StateGraph
+       v                                   v
+  Movi Assistant Panel ---------> MoviAgent.handle_action()
+                                      | 10+ DB tools (CRUD + query)
+                                      | Consequence checks
+                                      | Confirmation loop for risky ops
+``````
+
+**User Input**
 
     ↓The Vite dev server proxies all `/api` requests to `http://localhost:8000`, so both apps should run concurrently.
 

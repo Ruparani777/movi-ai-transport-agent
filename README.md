@@ -116,41 +116,14 @@ pip install -r backend/requirements.txt -r backend/requirements.langgraph.txt
   /src/hooks       # Web Speech API utilities
 /langgraph_agent   # LangGraph state machine and tools
 /db                # SQLite file generated on first run
-<!--
-   Classy README: concise, presentable, and demo-friendly.
-   Replaces the earlier assignment-style README with a polished project front page.
--->
 
-# Movi — Multimodal Transport Assistant
 
-A lightweight, demo-ready agent and admin console that helps transport managers inspect and operate shuttle fleets. Movi blends a modern React admin UI with a backend agent (LangGraph-aware when available) that reasons about consequences before executing critical changes.
-
-Badges: [Demo-ready] [WSL/Docker recommended] [SQLite seed data]
-
-— Elegant. Practical. Demonstrable. —
-
-## Quick highlights
 
 - Multimodal UI: text, voice (Web Speech API), and image upload stubs for vision matching.
 - Consequence-aware agent: parse → context → consequences → confirm → execute → respond.
 - Full CRUD-backed domain: Stops, Paths, Routes, Vehicles, Drivers, DailyTrips, Deployments (SQLite seed included).
 - Demo-first: demo scripts and output capture utilities that write timestamped run summaries to `outputs/`.
 
-## Project layout
-
-Top-level overview:
-
-```
-backend/            # FastAPI service, models, CRUD and agent endpoint
-frontend/           # Vite + React + TypeScript + Tailwind UI
-langgraph_agent/    # Agent implementations (manual state-machine + optional LangGraph adapter)
-scripts/            # Helper scripts (WSL/Docker/demo/push-to-github)
-outputs/            # Persisted agent run JSON + markdown summaries (created by output_writer)
-db/                 # SQLite database file (generated on first run)
-README.md
-```
-
-## Getting started — short and reliable
 
 Notes: Windows PowerShell has shown uvicorn shutdown issues in some environments. For a reliable demo, use WSL2 or Docker (instructions below).
 

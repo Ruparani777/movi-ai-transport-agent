@@ -154,7 +154,7 @@ Bash (WSL / macOS / Linux):
 
 After running, look in `outputs/` for `YYYYMMDDTHHMMSSZ_{runid}.json` and `.md` summaries.
 
-## Demo flow (2–5 minutes)
+## flow 
 
 1. Open the frontend and point it at a running backend.
 2. Show the Movi assistant panel and explain context-awareness (it changes suggestions by page).

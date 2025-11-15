@@ -27,27 +27,11 @@
 
 - ✅ **Seeded SQLite database**: 5 stops, 2 paths, 2 routes, 3 vehicles, 3 drivers, 2 trips
 
-backend/
-  main.py         # FastAPI entrypoint & REST endpoints
-  database.py     # SQLModel engine configuration
-  models.py       # ORM models (stops, paths, routes, etc.)
-  crud.py         # Shared database helper functions
-  seed_data.py    # Dummy dataset seeded on startup
-  db/             # SQLite file auto‐generated on first run
-
-frontend/
-  /src/pages      # busDashboard & manageRoute views
-  /src/components # Layout shell + Movi assistant widget
-  /src/hooks      # Web Speech API utilities
-  assets/         # Logos / demo captures
-
-langgraph_agent/
-  agent.py / tools / state_graph.py  # LangGraph state machine
-
 ```
 
 
 
+```
 **Terminal 2 — Frontend:**
 
 ```powershell---
@@ -68,9 +52,9 @@ http://127.0.0.1:5173/- Node.js 18+
 
 ```- pnpm or npm (examples use `npm`)
 
+```
 
-
----### Backend setup
+**Backend setup**
 
 
 

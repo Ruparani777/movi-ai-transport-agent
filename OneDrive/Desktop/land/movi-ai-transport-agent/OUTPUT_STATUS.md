@@ -73,7 +73,7 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8001
 | **Frontend Code** | 🟢 COMPILED | No TypeScript errors |
 | **Backend Server** | RUNNING | Environment |
 | **Backend Code** | 🟢 VALID | All imports, no errors |
-| **Database** | 🟡 NOT CREATED | Backend didn't reach startup |
+| **Database** | 🟡 CREATED | Backend reach startup |
 | **Agent Logic** | 🟢 CODED | 15+ actions implemented |
 | **Documentation** | 🟢 COMPLETE | README.md, PROJECT_STATUS.md, RUNTIME_STATUS.md |
 

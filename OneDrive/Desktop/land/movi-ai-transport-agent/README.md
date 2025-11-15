@@ -137,7 +137,7 @@ User Input
 
 Agent Response
 
-``` 2. Manage Route (`/manageRoute`)
+ 2. Manage Route (`/manageRoute`)
 
 
 ---- Form-driven creation of new stops (delegates to Movi agent for execution)
@@ -189,11 +189,11 @@ Agent Response
 
 ---   - Trigger “Remove the vehicle from ‘Bulk - 00:01’.” Demonstrate confirmation guard, then confirm.
 
-4. **Vision Check**
+ **FUTURE IMPLEMETATIONS**
 
-## 🧠 Agent Actions (≥10 Implemented)   - Upload screenshot named `Bulk-00-01.png` (or similar) to prove image matching.
+## 🧠 Agent Actions (≥10 Implemented)   - Upload screenshot named `Bulk-00-01.png`  to prove image matching.
 
-5. **Voice Interaction**
+ **Voice Interaction**
 
 ### Reads (No Consequence)   - Use microphone to ask “What is the status of Bulk - 08:30?” and observe STT & TTS.
 
@@ -241,7 +241,7 @@ Agent Response
 
 
 
-**Request:**## Credits
+**Request:**
 
 ```json
 
@@ -399,4 +399,4 @@ movi-ai-transport-agent/
 
 **Stack**: FastAPI, React, Vite, SQLModel, SQLite  
 **Status**: Ready for local testing 
-**Created**: November 2025
+**Created**: November 2025 by Ruparani Thupakula

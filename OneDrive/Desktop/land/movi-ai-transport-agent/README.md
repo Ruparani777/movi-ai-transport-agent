@@ -86,6 +86,7 @@ Database (SQLite)
 
 └── Vehicles, Drivers, Trips, Deployments (dynamic)
 
+
 ``````bash
 
 cd frontend
@@ -95,8 +96,9 @@ cd frontend
 npm run dev
 
 ``````
-``````
+
 **ARCHITECTURE**/
+``````
 [React Admin Console]  <--REST-->  [FastAPI Backend]  <--SQLModel-->  [SQLite Dummy DB]
        |                                   |
        | Web Speech API / uploads          | LangGraph StateGraph
@@ -106,9 +108,10 @@ npm run dev
                                       | Consequence checks
                                       | Confirmation loop for risky ops
 ``````
-``````
+
 
 **User Input**
+``````
 
     ↓The Vite dev server proxies all `/api` requests to `http://localhost:8000`, so both apps should run concurrently.
 
@@ -136,7 +139,7 @@ Agent Response
 
 ``` 2. Manage Route (`/manageRoute`)
 
-
+``````
 
 ---- Form-driven creation of new stops (delegates to Movi agent for execution)
 

@@ -27,11 +27,7 @@
 
 - ✅ **Seeded SQLite database**: 5 stops, 2 paths, 2 routes, 3 vehicles, 3 drivers, 2 trips
 
-```
 
-
-
-```
 **Terminal 2 — Frontend:**
 
 ```powershell---
@@ -56,9 +52,7 @@ http://127.0.0.1:5173/- Node.js 18+
 
 **Backend setup**
 
-
-
-## 🏗️ Architecture```bash
+## 🏗️ Architecture bash
 
 cd backend
 
@@ -101,7 +95,6 @@ cd frontend
 npm run dev
 
 ``````
-``````
 
 **ARCHITECTURE**/
 [React Admin Console]  <--REST-->  [FastAPI Backend]  <--SQLModel-->  [SQLite Dummy DB]
@@ -124,11 +117,11 @@ npm run dev
 
 [2] Check Context (page awareness)
 
-    ↓## Feature Walkthrough
+    ↓ Feature Walkthrough
 
 [3] Check Consequences (warn if risky)
 
-    ↓### 1. Bus Dashboard (`/busDashboard`)
+    ↓1. Bus Dashboard (`/busDashboard`)
 
 [4] Execute Action (if no confirmation needed)
 
@@ -140,7 +133,7 @@ npm run dev
 
 Agent Response
 
-```### 2. Manage Route (`/manageRoute`)
+``` 2. Manage Route (`/manageRoute`)
 
 
 
